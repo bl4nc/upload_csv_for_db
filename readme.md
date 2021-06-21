@@ -11,5 +11,7 @@
 <br>
 
 > If you don't have a hosting, you can use [XAMMP](https://www.apachefriends.org/pt_br/index.html) for build a localhost php server and a local mysql database, just install and Start the Apache and MySql;
+>After XAMMP download and run the localhost server move the files for folder *htdocs* in XAMMP folder.
+>For access open your browser the link localhost/folder_name example: localhost/upload_csv_for_db
 
 

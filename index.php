@@ -10,21 +10,41 @@
 
 <body>
 
-<form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="" enctype="multipart/form-data">
 
-<label>Select a csv data</label>
+        <label>Select a csv data</label>
 
-<br>
-<br>
-<input type="file" name="csv_data" accept=".csv">
-<br>
-<br>
-<button type="submit">Send</button>
-</form>
+        <br>
+        <br>
+        <input type="file" name="csv_data" accept=".csv">
+        <br>
+        <br>
+        <button type="submit">Send</button>
+    </form>
 </body>
 
 </html>
 
 <?php
+include "env.php";
+include "db_config.php";
+if (isset($_FILES)) {
+    $file = $_FILES[array_keys($_FILES)[0]]['tmp_name']; //Uploaded file
+    if (move_uploaded_file($file, "upload/" . "up.csv")) {
+        $table_name = "test_table";
+        $sql = "LOAD DATA LOCAL INFILE 'upload/up.csv' 
+            INTO TABLE $table_name 
+            FIELDS TERMINATED BY ';' 
+            ENCLOSED BY '\"'
+            LINES TERMINATED BY '\n'
+            IGNORE 1 ROWS"; //Ignore title line
 
-print_r($_FILES);
+        $query = $mysqli->query($sql);
+        if ($query) {
+            unlink("upload/up.csv");
+            echo 'Upload complete!';
+        } else {
+            echo 'Upload error';
+        }
+    }
+}

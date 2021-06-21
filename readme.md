@@ -6,6 +6,7 @@
 - Rename the file env.example.php for env.php ;
 - Edit the env.php for you database configuration ; 
 - Use the file example base.csv to be based ;
+- Create a folder with name upload
 - Be happy :smiley:
 
 <br>

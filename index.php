@@ -28,7 +28,7 @@
 <?php
 include "env.php";
 include "db_config.php";
-if (isset($_FILES)) {
+if (!empty($_FILES)) {
     $file = $_FILES[array_keys($_FILES)[0]]['tmp_name']; //Uploaded file
     if (move_uploaded_file($file, "upload/" . "up.csv")) {
         $table_name = "test_table";

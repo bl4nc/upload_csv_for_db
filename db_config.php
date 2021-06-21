@@ -1,7 +1,7 @@
 <?php
  $server = getenv("SERVER");
  $user = getenv("USER");
- $password = getenv("");
+ $password = getenv("PASSWORD");
  $database = getenv("DATABASE");
  // Connect to user database
  $mysqli = new mysqli($server, $user, $password, $database);

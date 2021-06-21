@@ -4,7 +4,7 @@
 
 ## Steps for run;
 - Rename the file env.example.php for env.php ;
-- Edit the env.php for you database configuration ;
+- Edit the env.php for you database configuration ; 
 - Use the file example base.csv to be based ;
 - Be happy :smiley:
 
